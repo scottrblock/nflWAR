@@ -78,7 +78,7 @@ join_position_statistics <- function(model_data_list) {
 #'                                             "Passer_ID_Name")
 #' @export
 
-calc_passing_splits <- function(pass_pbp, splits = "Passer_ID_Name") {
+calc_passing_splits <- function(pass_pbp, splits = c("GameID", "Passer_ID_Name")) {
 
   # Turn the splits into the group variables:
   split_groups <- lapply(splits, as.symbol)
@@ -194,7 +194,7 @@ calc_passing_splits <- function(pass_pbp, splits = "Passer_ID_Name") {
 #'                                               "Receiver_ID_Name")
 #' @export
 
-calc_receiving_splits <- function(pass_pbp, splits = "Receiver_ID_Name") {
+calc_receiving_splits <- function(pass_pbp, splits = c("GameID", "Receiver_ID_Name")) {
 
   # Turn the splits into the group variables:
   split_groups <- lapply(splits, as.symbol)
@@ -305,7 +305,7 @@ calc_receiving_splits <- function(pass_pbp, splits = "Receiver_ID_Name") {
 #'                                               "Rusher_ID_Name")
 #' @export
 
-calculate_rushing_splits <- function(rush_pbp, splits = "Rusher_ID_Name") {
+calculate_rushing_splits <- function(rush_pbp, splits = c("GameID", "Rusher_ID_Name")) {
 
   # Turn the splits into the group variables:
   split_groups <- lapply(splits, as.symbol)
